@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Hytek_Controllers")(type "KiCad")(uri "${KIPRJMOD}/Hytek_Controllers.kicad_sym")(options "")(descr ""))
+)
