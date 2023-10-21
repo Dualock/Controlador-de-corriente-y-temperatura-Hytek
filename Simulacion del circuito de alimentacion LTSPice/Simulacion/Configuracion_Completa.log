@@ -1,0 +1,75 @@
+Circuit: * C:\Users\djfon\OneDrive\Escritorio\Proyecto\Controlador-de-corriente-y-temperatura-Hytek\Simulacion del circuito de alimentacion LTSPice\Simulacion\Configuracion_Completa.asc
+
+Questionable use of curly braces in "b§e_abm1 vyy 0 v={max(v(vxx),(v(vzz)+({ilim}*{rout})))}"
+    Error: undefined symbol in: "max([v](vxx),(v(vzz)+((ilim)*(rout))))"
+Questionable use of curly braces in "b§e_abm1 vyy 0 v={max(v(vxx),(v(vzz)+({ilim}*{rout})))}"
+    Error: undefined symbol in: "max([v](vxx),(v(vzz)+((ilim)*(rout))))"
+WARNING: Less than two connections to node u3:n350468.  This node is used by e:u3:_abm2.
+WARNING: Less than two connections to node u4:n350468.  This node is used by e:u4:_abm2.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 5.39199e-07
+vernier = 0.03125
+vernier = 0.0416667
+Gmin = 4.97563e-07
+vernier = 0.0555555
+vernier = 0.074074
+Gmin = 4.32481e-07
+vernier = 0.0987653
+Gmin = 3.47163e-07
+vernier = 0.131687
+vernier = 0.175583
+Gmin = 2.40713e-07
+vernier = 0.23411
+vernier = 0.312147
+Gmin = 1.35116e-07
+vernier = 0.416196
+Gmin = 5.52385e-08
+vernier = 0.554928
+vernier = 0.739903
+Gmin = 1.28492e-08
+vernier = 0.986537
+vernier = 1
+Gmin = 1.56028e-09
+Gmin = 1.67533e-10
+Gmin = 1.79888e-11
+Gmin = 1.93153e-12
+Gmin = 2.07396e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(u3:adj)
+Ignoring empty pin current: Ix(u4:adj)
+Ignoring empty pin current: Ix(u3:adj)
+Ignoring empty pin current: Ix(u4:adj)
+
+Date: Fri Oct 20 02:15:37 2023
+Total elapsed time: 1.055 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3424
+traniter = 2088
+tranpoints = 1045
+accept = 1045
+rejected = 0
+matrix size = 214
+fillins = 222
+solver = Normal
+Avg thread counts: 2.8/2.9/2.2/1.6
+Matrix Compiler1: 30.64 KB object code size  8.0/3.5/[2.1]
+Matrix Compiler2: 23.90 KB object code size  3.7/4.3/[1.8]
+
