@@ -95,6 +95,7 @@ Se obtuvieron estos valores para los parametros del termistor NTC dale 10k dada 
 Para realizar un sensor de corriente en TinkerCAD para el Hy6340, se utilizó el pín 8 del controlador, llamado Vref, esta salida se relaciona directamente con la corriente de salida Iout, entonces queda sencillo leer Vref en el arduino y realizar la conversión internamente con código de Vref a Iout.
 + ### Correlación de Vref con Iout
 De acuerdo con las mediciones realizadas en el laboratorio, la relación Iout es la siguiente.
+
   <img src='Figuras/IoutVsVref.png' width='500'>
   
 + ### Configuración en TinkerCAD
