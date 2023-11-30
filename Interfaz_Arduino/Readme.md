@@ -38,7 +38,7 @@ $$ R_T = R_k(\frac{V_{in}}{V_{out}}-1) $$
 
 Si se utiliza un pin analogico en modo lectura en el arduino para leer la tensión de salida, entonces se puede calcular dentro del código fácilmente el valor resistivo, la configuración en Arduino es la siguiente:
 
-  ![Divisor de tensiones Arduino](Figuras/Divisor_de_tensiones_Arduino.png)
+  <img src='Figuras/Divisor_de_tensiones_Arduino.png' width='500'>
 
 + ### Paso 3  `Conversion de resistencia a temperatura`
 Normalmente para un termistor NTC se utilizan dos algoritmos
@@ -47,7 +47,7 @@ Normalmente para un termistor NTC se utilizan dos algoritmos
 Consiste en tomar 3 valores de resistencia del termistor y la temperatura medida, en este proyecto se utiliza la tabla de resistencia vs temperatura que provee la hoja de datos Hy5640, se trata de tomar las medidas que se observan más claras para mayor precisión.
 - Gráfica de variación de la resistencia respecto a la temperatura 10k dale termistor
   
-![Gráfica de variación de la resistencia respecto a la temperatura 10k dale termistor](Figuras/RvsTemp.PNG)
+<img src='Figuras/RvsTemp.PNG' width='500'>
 	
 | Valores medidos | R k $\Omega$ | T $C^o$ |
 |-----------------|:-----------:|--------:|
@@ -77,17 +77,42 @@ Finalmente, se puede utilizar un software que haga este calculo, por ejemplo  [S
 Se obtuvieron estos valores para los parametros del termistor NTC dale 10k dada la curva
 
 - Obtención de los parametros de Stainhart-Hart y beta
-  
-![Obtención de los parametros de Stainhart-Hart y beta](Figuras/Steinhart_B_Models.PNG)
+
+<img src='Figuras/Steinhart_B_Models.PNG' width='500'>
 
 + ### Resultados  `Simulación del diseño en TinkerCAD`
   Se logró modelar correctamente el comportamiento del termistor de 10k como se muestra en la siguiente figura, donde se modela mediante un potenciometro, la variación de resistencia del termistor y se muestra la temperatura respectiva.
   - Lecturas de temperatura
   
-  ![Lectura 1](Figuras/Temperature_sensor.PNG)
+<img src='Figuras/Temperature_sensor.PNG' width='500'>
 
-  ![Lectura 2](Figuras/Temperature_sensor2.PNG)
+<img src='Figuras/Temperature_sensor2.PNG' width='500'>
   
-  ![Lectura 3](Figuras/Temperature_sensor3.PNG)
+<img src='Figuras/Temperature_sensor3.PNG' width='500'>
+  
+## Interfaz para control de `temperatura`
++ ### Contexto
+Para realizar un sensor de corriente en TinkerCAD para el Hy6340, se utilizó el pín 8 del controlador, llamado Vref, esta salida se relaciona directamente con la corriente de salida Iout, entonces queda sencillo leer Vref en el arduino y realizar la conversión internamente con código de Vref a Iout.
++ ### Correlación de Vref con Iout
+De acuerdo con las mediciones realizadas en el laboratorio, la relación Iout es la siguiente.
 
-+ ### Resultados  `Implementación`
+  <img src='Figuras/IoutVsVref.png' width='500'>
+  
++ ### Configuración en TinkerCAD
+  
+En TinkerCAD, se agrega una fuente de tensión para simular la tensión de salida Vref y un divisor de tensión, ya que arduino recibe tensiones de 5V máximo. Se utiliza una resistencia de 15k y otra de 3k para reducir la tension de entrada en factor de 1/6
+
+$$V_{medida} = V_{in} (\frac{3k}{3k + 15k}) = V_{in} \frac{1}{6} $$
+
+Luego, dentro del código, simplemente se multiplica la tensión medida en un factor de 6 y se obtiene la lectura deseada. Con este valor, se procede a calcular la corriente de salida del diodo láser con la ecuación obtenida en el punto anterior. Recordando que la tensión Vref inicialmente es negativa con respecto a GND, por lo que se propone conectar a GND de Arduino Vref, y en la entrada analogica A0 conectar GND del Hy6340. La idea es compensar este signo dentro del código de Arduino. Entonces
+
+$$I_{out} = 0.0536*(V_{ref}) -0.181$$
++ ### Resultados  `Simulación del diseño en TinkerCAD`
+Así se logra realizar mediciones coherentes aunque no tan precisas en algunos puntos, como se puede ver en la imagen.
+
+<img src='Figuras/Sensor_Corriente.PNG' width='500'>
+
+<img src='Figuras/Sensor_Corriente2.PNG' width='500'>
+
+<img src='Figuras/Sensor_corriente3.PNG' width='500'>
+
