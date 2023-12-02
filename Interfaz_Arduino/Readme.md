@@ -81,7 +81,7 @@ Se obtuvieron estos valores para los parametros del termistor NTC dale 10k dada 
 <img src='Figuras/Steinhart_B_Models.PNG' width='500'>
 
 + ### Resultados  `Simulación del diseño en TinkerCAD`
-  Se logró modelar correctamente el comportamiento del termistor de 10k como se muestra en la siguiente figura, donde se modela mediante un potenciometro, la variación de resistencia del termistor y se muestra la temperatura respectiva.
+  Se logró modelar correctamente el comportamiento del termistor de 10k como se muestra en la siguiente figura, donde se modela mediante un potenciómetro, la variación de resistencia del termistor y se muestra la temperatura respectiva.
   - Lecturas de temperatura
   
 <img src='Figuras/Temperature_sensor.PNG' width='500'>
